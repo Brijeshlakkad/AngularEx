@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudentsModule } from './students/students.module';
-import { CustomPreloading } from './common/CustomPreloading';
 
 @NgModule({
   declarations: [
@@ -13,9 +11,8 @@ import { CustomPreloading } from './common/CustomPreloading';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StudentsModule
   ],
-  providers: [CustomPreloading],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
