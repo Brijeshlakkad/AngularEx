@@ -1,0 +1,63 @@
+<div>
+    <h1>Registration Form</h1>
+    <form [formGroup]="personForm" (ngSubmit)="showFormData()">
+        <div class="form-control">
+            <label>Name</label>
+            <input type="text" formControlName="name" />
+            <div *ngIf="personForm.get('name').invalid && (personForm.get('name').touched || personForm.get('name').dirty)" class="text-danger message-block">
+                <div *ngIf="personForm.get('name').errors.required" class="error-message">
+                    <small>Name is required.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-control">
+            <label>Email</label>
+            <input type="text" formControlName="email" />
+            <div *ngIf="personForm.get('email').invalid && (personForm.get('email').touched || personForm.get('email').dirty)" class="text-danger message-block">
+                <div *ngIf="personForm.get('email').errors.required" class="error-message">
+                    <small>Email is required.</small>
+                </div>
+                <div *ngIf="personForm.get('email').errors.pattern" class="error-message">
+                    <small>Invalid Email</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-control">
+            <label>Password</label>
+            <input type="text" formControlName="password" />
+            <div *ngIf="personForm.get('password').invalid && (personForm.get('password').touched || personForm.get('password').dirty)" class="text-danger message-block">
+                <div *ngIf="personForm.get('password').errors.required" class="error-message">
+                    <small>Password is required.</small>
+                </div>
+                <div *ngIf="personForm.get('password').errors.pattern" class="error-message">
+                    <small>Invalid Password</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-control">
+            <label>Contact</label>
+            <input type="text" formControlName="contact" />
+            <div *ngIf="personForm.get('contact').invalid && (personForm.get('contact').touched || personForm.get('contact').dirty)" class="text-danger message-block">
+                <div *ngIf="personForm.get('contact').errors.required" class="error-message">
+                    <small>Contact is required.</small>
+                </div>
+                <div *ngIf="personForm.get('contact').errors.pattern" class="error-message">
+                    <small>Invalid Contact</small>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit" [disabled]="!personForm.valid">Submit</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="isValidToShow" class="data-to-show">
+    <span class="field">Name</span>
+    <span class="value">{{displayData.name}}</span><br/>
+    <span class="field">Email</span>
+    <span class="value">{{displayData.email}}</span><br/>
+    <span class="field">Password</span>
+    <span class="value">{{displayData.password}}</span><br/>
+    <span class="field">Contact</span>
+    <span class="value">{{displayData.contact}}</span>
+</div>

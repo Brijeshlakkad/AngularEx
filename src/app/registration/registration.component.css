@@ -1,0 +1,22 @@
+.form-control {
+    padding: 10px;
+}
+
+.form-control label {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.error-message {
+    color: red;
+}
+
+.data-to-show {
+    padding: 10px;
+}
+
+.data-to-show .field {
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 10px;
+}
