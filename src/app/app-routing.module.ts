@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomPreloading } from './common/CustomPreloading';
+import { RegistrationComponent } from './registration/registration.component';
 
 
-const routes: Routes = [{
-  path: 'students', loadChildren: './students/students.module#StudentsModule' // loadChildren: () => import('./students/students.module').then(mod => mod.StudentsModule) 
-},
-{ path: 'lazy', loadChildren: './lazy.module#LazyModule' }];
+const routes: Routes = [{ path: "", component: RegistrationComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: CustomPreloading })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

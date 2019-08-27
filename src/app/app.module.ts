@@ -1,21 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudentsModule } from './students/students.module';
-import { CustomPreloading } from './common/CustomPreloading';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StudentsModule
+    ReactiveFormsModule
   ],
-  providers: [CustomPreloading],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
