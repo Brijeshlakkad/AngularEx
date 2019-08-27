@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-registration',
@@ -9,9 +9,9 @@ import { FormBuilder } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
 
   personForm: FormGroup;
-  emailRegEx = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-  passwordRegEx = /(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/;
-  mobileRegEx = /^[0-9]{10}$/;
+  emailRegEx: RegExp = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+  passwordRegEx: RegExp = /(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/;
+  mobileRegEx: RegExp = /^[0-9]{10}$/;
   displayData: any;
   isValidToShow: boolean = false;
   constructor(private fb: FormBuilder) {
