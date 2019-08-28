@@ -4,3 +4,10 @@
     margin: 10px;
     background-color: #8a8a8a42;
 }
+
+.carousel-indicators {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}

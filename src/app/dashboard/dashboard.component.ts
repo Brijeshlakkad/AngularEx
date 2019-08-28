@@ -51,14 +51,22 @@ export class DashboardComponent implements OnInit {
   }
   previousImg() {
     if (this.index - 1 >= 0) {
-      this.stateSelected = this.getStateName(--this.index);
-      this.countryForm.controls.stateControl.setValue(this.stateSelected);
+      this.changeImg(--this.index);
+    } else {
+      this.index = this.stateList.length - 1;
+      this.changeImg(this.index);
     }
   }
   nextImg() {
     if (this.index + 1 < this.stateList.length) {
-      this.stateSelected = this.getStateName(++this.index);
-      this.countryForm.controls.stateControl.setValue(this.stateSelected);
+      this.changeImg(++this.index);
+    } else {
+      this.index = 0;
+      this.changeImg(this.index);
     }
+  }
+  changeImg(index: number) {
+    this.stateSelected = this.getStateName(index);
+    this.countryForm.controls.stateControl.setValue(this.stateSelected);
   }
 }

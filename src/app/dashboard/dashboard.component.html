@@ -19,6 +19,11 @@
         </div>
     </div>
     <div class="row">
+        <span *ngFor="let state of stateList; let i = index">
+             <a class="btn" (click)="changeImg(i)"><span>o</span></a>
+        </span>
+    </div>
+    <div class="row">
         <button class="btn btn-sm btn-primary" (click)="previousImg()"><</button>
         <button class="btn btn-sm btn-primary" (click)="nextImg()">></button>
     </div>

@@ -1,18 +1,15 @@
 <div class="container-fluid">
     <app-header *ngIf="headerToShow"></app-header>
-    <div *ngIf="sidebarToShow">
+    <div>
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" *ngIf="sidebarToShow">
                 <app-sidebar></app-sidebar>
             </div>
-            <div class="col-sm-8">
+            <div [ngClass]="{ 'col-sm-8' : sidebarToShow}">
                 <section>
                     <router-outlet (activate)="changeOfRoute()"></router-outlet>
                 </section>
             </div>
         </div>
-    </div>
-    <div *ngIf="!sidebarToShow">
-        <router-outlet (activate)="changeOfRoute()"></router-outlet>
     </div>
 </div>
