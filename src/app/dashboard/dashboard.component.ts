@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,17 +7,58 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  id: string;
-  constructor(private router: Router, public authService: AuthService) { }
-
-  ngOnInit() {
-    this.id = localStorage.getItem('token');
+  countryList: any = [
+    { countryName: "USA", states: [{ name: "LA", src: "../../assets/images/la.jpeg" }, { name: "NYC", src: "../../assets/images/nyc.jpeg" }] },
+    { countryName: "India", states: [{ name: "Gujarat", src: "../../assets/images/gujarat.jpeg" }, { name: "Delhi", src: "../../assets/images/delhi.jpeg" }] }
+  ];
+  stateList: any = [];
+  index: number = 0;
+  stateSelected: string;
+  countryForm: FormGroup;
+  countryControl: FormControl;
+  stateControl: FormControl;
+  constructor(private fb: FormBuilder) {
+    this.countryForm = this.fb.group({
+      countryControl: [this.countryList[0].countryName],
+      stateControl: [this.countryList[0].states[0].name]
+    });
   }
 
-  logout(): void {
-    console.log("Logout");
-    this.authService.logout();
-    this.router.navigate(['/login']);
+  ngOnInit() {
+    this.onCountrySelected(this.countryList[0].countryName);
+  }
+  getStateList(countryName: string) {
+    return this.countryList.filter((country) =>
+      country.countryName == countryName
+    )[0].states;
+  }
+  onCountrySelected(countryName: string) {
+    this.stateList = null;
+    this.stateList = this.getStateList(countryName);
+    this.stateSelected = this.stateList[0].name;
+    this.countryForm.controls.stateControl.setValue(this.stateList[0].name);
+    this.index = 0;
+  }
+  onStateSelected(stateName: string) {
+    this.stateSelected = stateName;
+    this.index = this.getIndex(stateName);
+  }
+  getIndex(stateName: string) {
+    return this.stateList.findIndex(state => state.name == stateName);
+  }
+  getStateName(index: number) {
+    return this.stateList[index].name;
+  }
+  previousImg() {
+    if (this.index - 1 >= 0) {
+      this.stateSelected = this.getStateName(--this.index);
+      this.countryForm.controls.stateControl.setValue(this.stateSelected);
+    }
+  }
+  nextImg() {
+    if (this.index + 1 < this.stateList.length) {
+      this.stateSelected = this.getStateName(++this.index);
+      this.countryForm.controls.stateControl.setValue(this.stateSelected);
+    }
   }
 }

@@ -1,0 +1,31 @@
+#sidebar-wrapper {
+    position: fixed;
+    left: 0px;
+    margin-left: -30px;
+}
+
+.sidebar-nav {
+    display: block;
+}
+
+.sidebar-nav li {
+    list-style: none;
+    border: 1px black solid;
+    padding: 10px;
+}
+
+.sidebar-nav li a {
+    font-size: 17px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+}
+
+.sidebar-nav li a:visited {
+    text-decoration: none;
+}
+
+.sidebar-nav li a:active {
+    text-decoration: none;
+}

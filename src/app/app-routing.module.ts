@@ -7,10 +7,10 @@ import { RegistrationComponent } from './registration/registration.component';
 
 
 const routes: Routes = [
-  { path: "", component: LoginComponent},
-  { path: "login", component: LoginComponent},
-  { path: "register", component: RegistrationComponent},
-  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] }
+  { path: "", component: LoginComponent, data: { sidebar: false, header: false } },
+  { path: "login", component: LoginComponent, data: { sidebar: false, header: false } },
+  { path: "register", component: RegistrationComponent, data: { sidebar: false, header: false } },
+  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard], data: { sidebar: true, header: true } }
 ];
 
 @NgModule({

@@ -21,7 +21,6 @@ export class AuthService {
     localStorage.removeItem('token');
   }
   public isLoggedIn(): boolean {
-    console.log("isLoggedIn called");
     let status = false;
     if (localStorage.getItem('isLoggedIn') == "true") {
       status = true;
@@ -29,7 +28,6 @@ export class AuthService {
     else {
       status = false;
     }
-    console.log("Login Status: "+status);
     return status;
   }
 }

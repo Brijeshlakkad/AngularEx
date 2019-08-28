@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
     }
     else {
       if (this.f.username.value == this.model.username && this.f.password.value == this.model.password) {
-        console.log("Login successful");
         localStorage.setItem('isLoggedIn', "true");
         localStorage.setItem('token', this.f.username.value);
         this.router.navigate([this.returnUrl]);

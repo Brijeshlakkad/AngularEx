@@ -1,6 +1,25 @@
-<div class="container">
-    <div class="col-md-6 col-md-offset-3 loginBox">
-        Welcome, {{id}}
-        <a href="javascript:void(0);" (click)="logout()">Logout</a>
+<div class="row">
+    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+        <form [formGroup]="countryForm">
+            <select formControlName="countryControl" class='dropdown-data' #countrySelect (change)='onCountrySelected(countrySelect.value)'>
+           <option class='option' 
+           *ngFor='let country of countryList' 
+           [value]="country.countryName">{{country.countryName}}</option>
+        </select>
+            <select formControlName="stateControl" class='dropdown-data' #stateSelect (change)='onStateSelected(stateSelect.value)'>
+                <option class='option' 
+                *ngFor='let state of stateList' 
+                [value]="state.name">{{state.name}}</option>
+        </select>
+        </form>
+    </div>
+    <div class="row">
+        <div *ngFor="let state of stateList">
+            <img src="{{state.src}}" *ngIf="stateSelected==state.name" />
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-sm btn-primary" (click)="previousImg()"><</button>
+        <button class="btn btn-sm btn-primary" (click)="nextImg()">></button>
     </div>
 </div>

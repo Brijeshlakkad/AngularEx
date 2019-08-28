@@ -1,0 +1,13 @@
+.header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #646464c0;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 10px 0px;
+    margin: 10px 0px;
+    font-size: 20px;
+}
