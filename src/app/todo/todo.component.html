@@ -1,0 +1,28 @@
+<div class="row todo-main-block">
+    <div class="col-sm-offset-4 col-sm-4">
+        <div class="row">
+            <form [formGroup]="todoForm" (ngSubmit)="addTodo()">
+                <div class="form-group">
+                    <label>Todo Item:</label>
+                    <input type="text" formControlName="todo" class="form-control" />
+                    <div *ngIf=" todoForm.get('todo').invalid && (todoForm.get('todo').touched || todoForm.get('todo').dirty) " class="text-danger message-block ">
+                        <div *ngIf="todoForm.get('todo').errors.required" class="error-message">
+                            <small>Todo item is required.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"><button class="btn btn-sm btn-success" [disabled]="!todoForm.valid">Add Item</button></div>
+            </form>
+        </div>
+        <div class="row">
+            <div *ngFor="let todo of todoList; let i = index" class="show-todo">
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" (click)="deleteTodo(todo.item)" class="close" data-dismiss="alert">&times;</button> {{i+1}}. <strong>{{todo.item}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-offset-2 col-sm-2 pull-right">
+        <button class="btn btn-primary " (click)="showTodoList() ">Show</button>
+    </div>
+</div>
