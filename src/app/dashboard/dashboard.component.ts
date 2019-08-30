@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class DashboardComponent implements OnInit {
   countryList: any = [
-    { countryName: "USA", states: [{ name: "LA", src: "../../assets/images/la.jpeg" }, { name: "NYC", src: "../../assets/images/nyc.jpeg" }] },
+    { countryName: "USA", states: [{ name: "LA", src: "../../assets/images/la.jpeg" }, { name: "NYC", src: "../../assets/images/nyc.jpeg" }, { name: "New Jersey", src: "../../assets/images/new-jersey.jpeg" }] },
     { countryName: "India", states: [{ name: "Gujarat", src: "../../assets/images/gujarat.jpeg" }, { name: "Delhi", src: "../../assets/images/delhi.jpeg" }] }
   ];
   stateList: any = [];

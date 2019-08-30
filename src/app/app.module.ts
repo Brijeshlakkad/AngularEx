@@ -12,6 +12,11 @@ import { AuthService } from './services/auth.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { HighchartComponent } from './highchart/highchart.component';
+import { Highchart2Component } from './highchart2/highchart2.component';
+import { Highchart3Component } from './highchart3/highchart3.component';
+import { Rgraph1Component } from './rgraph1/rgraph1.component';
+import { Rgraph2Component } from './rgraph2/rgraph2.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { RegistrationComponent } from './registration/registration.component';
     RegistrationComponent,
     DashboardComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    HighchartComponent,
+    Highchart2Component,
+    Highchart3Component,
+    Rgraph1Component,
+    Rgraph2Component,
   ],
   imports: [
     BrowserModule,

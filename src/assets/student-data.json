@@ -1,0 +1,47 @@
+{
+    "students": [{
+            "id": 1,
+            "name": "Brijesh",
+            "marks": [
+                30,
+                60,
+                80
+            ],
+            "color": "#CC1",
+            "gender": "Male"
+        },
+        {
+            "id": 2,
+            "name": "A1",
+            "marks": [
+                30,
+                40,
+                50
+            ],
+            "color": "#CA9",
+            "gender": "Female"
+        },
+        {
+            "id": 3,
+            "name": "A2",
+            "marks": [
+                90,
+                20,
+                20
+            ],
+            "color": "#CBF",
+            "gender": "Female"
+        },
+        {
+            "id": 4,
+            "name": "A3",
+            "marks": [
+                67,
+                39,
+                56
+            ],
+            "color": "#A34",
+            "gender": "Male"
+        }
+    ]
+}
